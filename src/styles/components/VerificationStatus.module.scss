@@ -1,0 +1,113 @@
+@import "../imports.scss";
+
+.verification {
+    border: 1px solid #F0F0F0;
+    background-color: #FFFFFF;
+    padding: 20px 40px 100px 40px;
+    position: relative;
+    gap: 80px;
+
+    &::before {
+        content: "";
+        display: block;
+        top: 40%;
+        position: absolute;
+        background-color: #F8F9F9;
+        @include size(100%,2px);
+
+        @include desctop-l {
+            top: 30% !important;
+        }
+
+        @include tablet-l-portrait {
+            top: 35% !important;
+        };
+
+        @include tablet-line-portrait {
+            top: 24.5% !important; 
+        }
+    }
+
+    &__info {
+        gap: 16px;
+        
+        & p:first-child {
+            color: #5ACEE8;
+            @include font(18px,600, 24px)
+        }
+
+        & p:last-child {
+            @include font(14px, 300, 24px);
+            color: #4A4F5E;
+        }
+
+        @include flexy(center,flex-start,column,wrap);
+
+        @include mobile-l-portrait {
+            align-items: center;
+        }
+    }
+
+    &__cards {
+        position: relative;
+        bottom: -55px;
+        gap: 32px;
+        @include flexy(center,center,row,wrap);
+    }
+
+    &__status {
+        position: relative;
+        top: 35px;
+        gap: 32px;
+        @include size(98%, auto);
+        @include flexy(space-between,center,row,wrap); 
+
+        @include tablet-l-portrait {
+            justify-content: center
+        }
+    }
+
+    @include size(92.5%, auto);
+    @include flexy(flex-start,center,column,no-wrap);
+
+    @include tablet-l-portrait {
+        width: 87.5%;
+    }
+}
+
+.verification__proggres {
+    gap:  30px;
+
+    &__info {
+        gap: 172px;
+
+        & p:first-child {
+            @include font(18px, 400, 24px); 
+        }
+
+        & p:last-child {
+            color: #03C9A9;
+            @include font(14px, 700, 24px)
+        }
+
+        @include flexy(center,center,row,wrap);
+
+        @include modile-portrait {
+            gap: 25px;
+        }
+    }
+
+    &__load {
+        gap:  4px;
+        & > div {
+            border-radius: 2px;
+            background-color: #03C9A9;
+            @include size(64px, 8px);
+        }
+
+        @include flexy(center,center,row,no-wrap);
+    }
+
+    @include flexy(center,center,column,wrap);  
+    @include size(auto, 64px)
+}

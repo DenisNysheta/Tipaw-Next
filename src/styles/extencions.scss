@@ -1,0 +1,12 @@
+@import "./mixins.scss";
+
+%title {
+    color: #20253F;
+    @include font(18px,600, 24px);
+}
+
+%languages {
+    color: #616B77;
+    @include font(14px, 700, 16px)
+}
+

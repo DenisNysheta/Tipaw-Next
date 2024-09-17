@@ -1,0 +1,105 @@
+@import "../imports.scss";
+
+.info {
+    transition: .2s linear;
+    gap: 16px;
+
+    &__bell {
+        padding: 0 12px;
+    }
+
+    &__language {
+        transition: .2s linear;
+        cursor: pointer;
+
+        @extend %languages;
+    }
+
+    &__user {
+        position: relative;
+        gap: 8px;
+        width: 152px;
+
+        & p {
+            color: #616B77;
+        }
+
+        &::after {
+            position: inherit;
+            top: -5px;
+            left: 5px;
+            transform: rotate(225deg);
+            content: "";
+            display: block;
+            border-top: 2px solid #616B77;
+            border-left: 2px solid #616B77;
+
+            @include size(12px, 12px);
+        }
+
+        @include flexy(center,center,row,no-wrap);
+    }
+
+    &__languages {
+        position: relative;
+
+        &::before {
+            content: "";
+            left: 50%;
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            background-color: #5ACEE8;
+            @include size(4px,4px);
+        }
+
+        @include flexy(space-between,center,row,no-wrap);
+        @include size(75px, 32px)
+    }
+
+    @include flexy(center,center,row,wrap);
+    @include tablet {
+        position: absolute;
+        z-index: 10;
+        flex-direction: column;
+        top: -175px;
+        left: 45%;
+        padding: 20px;
+        border-radius: 0 0 20px 20px;
+        background-color: #a9a9a982;
+    };
+    @include mobile-l-portrait {
+        left: 25%;
+    }
+}
+
+.burger_menu {
+    transition: .2s linear;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    gap: 10px;
+
+    & span {
+        transition: .2s linear;
+        display: block;
+        height: 5px;
+        gap: 15px;
+        border-radius: 20px;
+        width: 100%;
+        background-color: #616B77;
+    }
+
+    @include size(48px,39px);
+    @include tablet {
+        @include flexy(center,center,column,no-wrap)
+    };
+}
+
+.burger_menu_active {
+    transform: rotate(90deg);
+}
+
+.info_active {
+    top: 0;
+}

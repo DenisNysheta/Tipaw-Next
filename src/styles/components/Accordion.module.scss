@@ -1,0 +1,86 @@
+@import "../imports.scss";
+
+.accordion {
+    border: 1px solid #F0F0F0;
+    background-color: #FFFFFF;
+    gap: 32px;
+    padding: 40px;
+    position: relative;
+    
+    &__accordion {
+        border-radius: 11px;
+        border: 1px solid #5ACEE8;
+        @include size(100%,auto);
+        @include flexy(center,flex-start,column,wrap);
+    }
+
+    &__btn {
+        transition: .2s ease-in-out;
+        cursor: pointer;
+        right: 25px;
+        top: 20px;
+        position: absolute;
+        transform: rotate(45deg);
+        border-top: 2px solid white;
+        border-left: 2px solid white;
+        background-color: transparent;
+        border-right: none;
+        border-bottom: none;
+        @include size(13px, 13px);
+    }
+
+    &__text {
+        padding: 0 0 16px 24px;
+        max-width: 91%;
+        color: #616B77;
+        text-align: start;  
+        @include font(16px, 400, 24px);
+    }
+
+    &__time {   
+        color: #5ACEE8;
+        gap: 8px;   
+        padding: 16px 0 16px 24px;
+        @include flexy(center,center,row,no-wrap);
+        @include font(10px, 400, 16px);
+    }
+
+    &__title {
+        color: white;
+        text-align: start;
+        width: -webkit-fill-available;
+        position: relative;
+        border-radius: 10px 10px 0 0;
+        padding: 12px 24px 12px 24px;
+        background-color: #5ACEE8;
+        @include font(16px, 700, 24px);
+    }
+
+    &__message {
+        color: #5ACEE8;
+        gap: 16px;
+
+        &:after {
+            content: "";
+            display: block;
+            border-radius: 50%;
+            background-color: red;
+            @include size(10px, 10px);
+        }
+
+        @include font(18px, 600, 24px);
+        @include flexy(center,center,row, no-wrap);
+    }
+
+    @include size(92.5%, auto);
+    @include flexy(flex-start,flex-start,column,no-wrap);
+
+    @include tablet-l-portrait {
+        width: 87.5%;
+    }
+}
+
+.accordion_btn_active {
+    transform: rotate(225deg);
+    top: 15px;
+}

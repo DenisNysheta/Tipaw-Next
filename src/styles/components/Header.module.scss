@@ -1,0 +1,22 @@
+@import "../imports.scss";
+
+.header {
+    position: relative;
+    box-shadow: 0px 1px 0px 0px #F0F0F0;
+
+    &__title {
+        @extend %title;
+    }
+
+    &__language {
+        @extend %languages;
+    }
+
+    &__language_active {
+        color: #5ACEE8;
+    }
+    
+    @include size(inherit, 28px);
+    @include indentation(20px 24px 24px 24px,0);
+    @include flexy(space-between,center,row,wrap)
+}

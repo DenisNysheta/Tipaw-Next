@@ -4,21 +4,81 @@
     align-items: $align;
     flex-direction: $direction;
     flex-wrap: $wrap;
-}
+};
 
 @mixin size($width, $height) {
     width: $width;
     height: $height;
-}
+};
 
 @mixin colors($color, $background) {
     color: $color;
     background: $background;
-}
+};
 
-@mixin font($size, $weight, $family) {
+@mixin indentation($padding,$marign) {
+    padding: $padding;
+    margin: $marign;
+};
+
+@mixin font($size, $weight, $line-height) {
     font-size: $size;
     font-weight: $weight;
-    font-family: $family;
-}
+    line-height: $line-height;
+};
 
+// Media Query--->
+
+@mixin desctop {
+    @media (max-width: 1920px) {
+        @content
+    }
+};
+
+@mixin desctop-l {
+    @media (max-width: 1423px) {
+        @content
+    }
+};
+
+@mixin desctop-hd-l {
+    @media (min-width: 1231px) {
+        @content
+    }
+};
+
+@mixin desctop-hd {
+    @media (max-width: 1230px) {
+        @content
+    }
+};
+
+@mixin tablet-l-portrait {
+    @media (max-width: 920px) {
+        @content
+    }
+};
+
+@mixin tablet {
+    @media (max-width: 768px) {
+        @content
+    }
+};
+
+@mixin tablet-line-portrait {
+    @media (max-width: 757px) {
+        @content
+    }
+};
+
+@mixin mobile-l-portrait {
+    @media (max-width: 545px) {
+        @content
+    }
+};
+
+@mixin modile-portrait {
+    @media (max-width: 455px) {
+        @content
+    }
+}
