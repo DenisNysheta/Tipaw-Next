@@ -4,9 +4,7 @@ import React, { useState } from "react";
 import cl from "@/styles/components/Accordion.module.scss";
 import { CALENDAR } from "@/svg/listSvg";
 
-type Props = {};
-
-function Accordion({}: Props) {
+function Accordion() {
 
     const [active, setActive] = useState(false)
 

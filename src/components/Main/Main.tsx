@@ -3,9 +3,7 @@ import "@/styles/App.scss"
 import VerificationStatus from '../VerificationStatus/VerificationStatus'
 import Accordion from '../Accordion/Accordion'
 
-type Props = {}
-
-function Main({}: Props) {
+function Main() {
   return (
     <main>
         <VerificationStatus />

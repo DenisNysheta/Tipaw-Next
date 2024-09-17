@@ -2,9 +2,7 @@ import React from 'react'
 import cl from "@/styles/components/VerificationStatus.module.scss"
 import CardStatus from './CardStatus'
 
-type Props = {}
-
-function VerificationStatus({}: Props) {
+function VerificationStatus() {
 
     const CARDS_LIST = [
         {
