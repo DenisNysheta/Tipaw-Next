@@ -47,8 +47,8 @@ function VerificationStatus({}: Props) {
             </div>
         </div>
         <ul className={cl.verification__cards}>
-            {CARDS_LIST.map((obj) => {
-                return <CardStatus typeVerification={obj.typeVerification} infoVerification={obj.infoVerification} />
+            {CARDS_LIST.map((obj, index) => {
+                return <CardStatus key={index} typeVerification={obj.typeVerification} infoVerification={obj.infoVerification} />
             })}
         </ul>
     </div>
