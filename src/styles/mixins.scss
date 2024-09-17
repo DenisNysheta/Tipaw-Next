@@ -1,0 +1,24 @@
+@mixin flexy($justify, $align, $direction, $wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin colors($color, $background) {
+    color: $color;
+    background: $background;
+}
+
+@mixin font($size, $weight, $family) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+}
+
