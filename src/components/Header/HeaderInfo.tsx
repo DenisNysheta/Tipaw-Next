@@ -16,6 +16,7 @@ export default function HeaderInfo({NAME, LANGUAGES}: Props) {
 
     const [active, setActive] = useState(LANGUAGES[0])
     const [open, setOpen] = useState(false)
+    const [activeUserMenu, setActiveUserMenu] = useState(false)
 
   return (
     <>
@@ -26,10 +27,14 @@ export default function HeaderInfo({NAME, LANGUAGES}: Props) {
             </div>
             <div className={cl.info__bell}>
                 {BELL}
+                <p className={cl.info__message}>No message yet</p>
             </div>
-            <div className={cl.info__user}>
+            <div onClick={() => setActiveUserMenu(!activeUserMenu)} className={activeUserMenu ? `${cl.info__user} ${cl.user_active_menu}` : `${cl.info__user}`}>
                 <Image src={avatar} alt="Avatar User" />
                 <p>{NAME}</p>
+                <ul style={{opacity: activeUserMenu ? 1 : 0}} className={cl.user_menu}>
+                    Here can be more options
+                </ul>
             </div>
         </div>
         <div onClick={() => setOpen(!open)} className={ open ? `${cl.burger_menu} ${cl.burger_menu_active}` : cl.burger_menu}>
